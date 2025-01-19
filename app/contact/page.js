@@ -3,31 +3,33 @@ import React, { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 
 export default function Contact() {
-  const {data: session,status}=useSession()
+  const { data: session, status } = useSession()
   const [login, setlogin] = useState(false)
   const [error, seterror] = useState()
   const [confirm, setconfirm] = useState()
+  const [token, settoken] = useState(null)
   const [formdata, setformdata] = useState({
     name: "",
     email: "",
     message: "",
   });
-  const token = document.cookie
-          .split("; ")
-          .find((row) => row.startsWith("token="))
-          ?.split("=")[1];
-
+  
   useEffect(() => {
+    const token = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("token="))
+      ?.split("=")[1];
+      settoken(token)
     if (session) {
       setlogin(true);
     }
-    if(token){
+    if (token) {
       setlogin(true)
     }
-    if(!session && !token){
+    if (!session && !token) {
       seterror("Login to send message")
     }
-  }, [session,status]);
+  }, [session, status]);
 
   const handlechange = (e) => {
     const { name, value } = e.target;
@@ -35,7 +37,7 @@ export default function Contact() {
   };
 
   const sendmessage = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     try {
       const res = await fetch("/api/auth/message", {
@@ -107,14 +109,14 @@ export default function Contact() {
                 className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-gold"
               ></textarea>
             </div>
-            { !session && !token && <p className="text-red-500 text-sm">{error}</p>}
-            
-              <p className="text-green-500 text-base">{confirm}</p>
+            {!session && !token && <p className="text-red-500 text-sm">{error}</p>}
+
+            <p className="text-green-500 text-base">{confirm}</p>
             <button
               type="submit"
               disabled={!login}
               className="w-full bg-gold text-white py-2 px-4 rounded-lg hover:bg-yellow-600 transition duration-200"
-              
+
             >
               Send Message
             </button>

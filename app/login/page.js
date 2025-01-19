@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef,useEffect } from "react";
 import Cookies from "js-cookie";
 import { FaGoogle, FaFacebookF, FaApple } from "react-icons/fa";
 import { signIn, useSession } from "next-auth/react";
@@ -17,8 +17,11 @@ const Login = () => {
   const [error, seterror] = useState(null)
   const [error1, seterror1] = useState(null)
   const [show, setshow] = useState(false)
-  waveform.register();
-
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      waveform.register();
+    }
+  }, []);
   if (session) {
     if (typeof window !== "undefined") {
       window.location.href = "/profile";
@@ -92,12 +95,9 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-gray-200 flex items-center justify-center">
       {isLoading ? (
-        <p className='min-h-screen flex justify-center items-center text-black'><l-waveform
-          size="55"
-          stroke="3.5"
-          speed="1"
-          color="black"
-        ></l-waveform></p>
+        <p className='min-h-screen flex justify-center items-center text-black'>{typeof window !== "undefined" && (
+          <l-waveform size="55" stroke="3.5" speed="1" color="black"></l-waveform>
+        )}</p>
       ) : (
         <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
           <h1 className="text-2xl font-bold text-center mb-6 text-black">Welcome</h1>

@@ -4,7 +4,6 @@ import { useSession, signOut } from "next-auth/react";
 import { waveform } from "ldrs";
 
 const Page = () => {
-  waveform.register();
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -29,6 +28,12 @@ const Page = () => {
       }
     }
   };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      waveform.register();
+    }
+  }, []);
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -116,7 +121,9 @@ const Page = () => {
   if (loading) {
     return (
       <p className="min-h-screen flex justify-center items-center">
-        <l-waveform size="55" stroke="3.5" speed="1" color="black"></l-waveform>
+        {typeof window !== "undefined" && (
+          <l-waveform size="55" stroke="3.5" speed="1" color="black"></l-waveform>
+        )}
       </p>
     );
   }

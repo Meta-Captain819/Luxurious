@@ -16,14 +16,21 @@ export default function ProceedToPaymentPage() {
   const [loading, setLoading] = useState(false);
   const [error, seterror] = useState()
   const [order, setorder] = useState(false)
+  const [token, settoken] = useState(null)
   const isFormValid = address && city && country && paymentMethod;
-  waveform.register();
 
-  const token = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith("token="))
-    ?.split("=")[1];
-
+  
+  
+  useEffect(() => {
+      const token = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("token="))
+        ?.split("=")[1];
+        settoken(token)
+      if (typeof window !== "undefined") {
+        waveform.register();
+      }
+    }, []);
   useEffect(() => {
     const storedCartDetails = JSON.parse(localStorage.getItem("cartdetails"));
     if (storedCartDetails?.finalAmount) {
@@ -134,13 +141,14 @@ export default function ProceedToPaymentPage() {
 
 
   };
-  if (status === "loading") {
-    return <p className='min-h-screen flex justify-center items-center text-black'><l-waveform
-      size="55"
-      stroke="3.5"
-      speed="1"
-      color="black"
-    ></l-waveform></p>
+  if (status==="loading") {
+    return (
+      <p className="min-h-screen flex justify-center items-center">
+        {typeof window !== "undefined" && (
+          <l-waveform size="55" stroke="3.5" speed="1" color="black"></l-waveform>
+        )}
+      </p>
+    );
   }
 
   return (

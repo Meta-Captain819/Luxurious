@@ -1,16 +1,21 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useSession, signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 import { waveform } from "ldrs";
 
 export default function OrderHistoryPage() {
-  waveform.register();
   const [user, setUser] = useState(null);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const { data: session, status } = useSession();
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      waveform.register();
+    }
+  }, []);
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -93,7 +98,9 @@ export default function OrderHistoryPage() {
   if (loading) {
     return (
       <p className="min-h-screen flex justify-center items-center">
-        <l-waveform size="55" stroke="3.5" speed="1" color="black"></l-waveform>
+        {typeof window !== "undefined" && (
+          <l-waveform size="55" stroke="3.5" speed="1" color="black"></l-waveform>
+        )}
       </p>
     );
   }

@@ -5,7 +5,6 @@ import { useSession } from 'next-auth/react';
 import { waveform } from 'ldrs';
 
 const ChangePassword = () => {
-  waveform.register();
   const { data: session,status } = useSession();
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -14,7 +13,11 @@ const ChangePassword = () => {
   const [error, seterror] = useState(false)
   const [error1, seterror1] = useState()
   const [loading, setloading] = useState(true)
-
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      waveform.register();
+    }
+  }, []);
   useEffect(() => {
     const fetchdata = async () => {
       
@@ -109,8 +112,9 @@ if (res.ok) {
       
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black text-white">
       {loading ? <p className="min-h-screen flex justify-center items-center">
-        <l-waveform size="55" stroke="3.5" speed="1" color="white"></l-waveform>
-      </p>:
+        {typeof window !== "undefined" && (
+          <l-waveform size="55" stroke="3.5" speed="1" color="white"></l-waveform>
+        )}      </p>:
       <div className="bg-gray-900 p-8 rounded-lg shadow-lg max-w-md w-full">
         <h1 className="text-2xl font-bold text-center text-yellow-500 mb-6">
           Change Password
