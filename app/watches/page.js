@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import watches from "../../data/watches.json";
+import Image from "next/image";
 
 
 
@@ -25,35 +26,34 @@ const ProductPage = () => {
         Our Luxurious Watches
       </h1>
       <section className="bg-black py-12">
-  <div className="container mx-auto px-6">
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-      {watches.map((product) => (
-        <div
-          key={product.id}
-          className="group relative bg-gray-200 shadow-sm shadow-gold rounded-lg overflow-hidden transform transition duration-500 hover:scale-105"
-        >
-          <img
-            src={`${product.image}`}
-            alt={`Product ${product.name}`}
-            className="w-full h-56 object-cover"
-          />
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {watches.map((product) => (
+              <div
+                key={product.id}
+                className="group relative bg-gray-200 shadow-sm shadow-gold rounded-lg overflow-hidden transform transition duration-500 hover:scale-105"
+              >
+                <Image src={`${product.image}`} alt={`${product.name}`} width={"1000"} height={"1000"}
 
-          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-center py-2">
-            <h3 className="text-sm font-bold text-gold">{product.name}</h3>
-            <p className="text-xs text-white">${product.price}</p>
+                  className="w-full h-64 object-cover"
+                />
+
+                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-center py-2">
+                  <h3 className="text-sm font-bold text-gold">{product.name}</h3>
+                  <p className="text-xs text-white">${product.price}</p>
+                </div>
+
+                <button
+                  onClick={() => addToCart(product)}
+                  className="absolute inset-x-0 bottom-0 mb-14 mx-auto w-1/4 py-2 bg-gold text-black font-bold rounded shadow-md opacity-0 group-hover:opacity-100 transition duration-500"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            ))}
           </div>
-
-          <button
-            onClick={() => addToCart(product)}
-            className="absolute inset-x-0 bottom-0 mb-14 mx-auto w-1/4 py-2 bg-gold text-black font-bold rounded shadow-md opacity-0 group-hover:opacity-100 transition duration-500"
-          >
-            Add to Cart
-          </button>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
 
     </div>

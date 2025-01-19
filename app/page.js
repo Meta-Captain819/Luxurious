@@ -1,39 +1,38 @@
 "use client"
 import Image from "next/image";
-import { useState,useEffect } from "react";
-import { useSession } from "next-auth/react";
+import { useState } from "react";
+
 
 export default function Home() {
-  const {data: session,status}= useSession()
-  
+
 
 
   const [product, setproduct] = useState([
-    { id: 1, name: "The Lone", price:23000, image: "/product-1.jpg", quantity:1 },
-    { id: 2, name: "The Urban Professional", price: 8500, image: "/product-2.jpg", quantity:1 },
-    { id: 3, name: "Luxurious Gold", price:30000, image: "/product-3.jpg", quantity:1 },
-    { id: 4, name: "Sapphire Ring", price: 250000, image: "https://images.unsplash.com/photo-1561812350-932aed735105?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fGpld2VsbGVyeXxlbnwwfHwwfHx8MA%3D%3D", quantity:1 },
+    { id: 1, name: "The Lone", price: 23000, image: "/product-1.jpg", quantity: 1 },
+    { id: 2, name: "The Urban Professional", price: 8500, image: "/product-2.jpg", quantity: 1 },
+    { id: 3, name: "Luxurious Gold", price: 30000, image: "/product-3.jpg", quantity: 1 },
+    { id: 4, name: "Sapphire Ring", price: 250000, image: "https://images.unsplash.com/photo-1561812350-932aed735105?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fGpld2VsbGVyeXxlbnwwfHwwfHx8MA%3D%3D", quantity: 1 },
   ]);
   const [categories, setcategories] = useState([
-    { id: 1, image: "jewelry", link:"/jewellery" },
-    { id: 2, image: "Watches", link:"/watches" },
-    { id: 3, image: "Clothing", link:"/clothing" },
+    { id: 1, image: "jewelry.jpeg", link: "/jewellery" },
+    { id: 2, image: "Watches.jpeg", link: "/watches" },
+    { id: 3, image: "Clothing.jpeg", link: "/clothing" },
   ]);
 
   const addToCart = (product) => {
     const existingData = JSON.parse(localStorage.getItem("cart")) || [];
-  
+
     const productIndex = existingData.findIndex((item) => item.id === product.id);
-  
+
     let updatedData;
-  
+
     if (productIndex !== -1) {
       updatedData = existingData.map((item, index) =>
         index === productIndex
           ? {
-              ...item,
-              quantity: item.quantity + 1, 
-            }
+            ...item,
+            quantity: item.quantity + 1,
+          }
           : item
       );
     } else {
@@ -41,14 +40,14 @@ export default function Home() {
         ...existingData,
         {
           ...product,
-          quantity: 1, 
+          quantity: 1,
         },
       ];
     }
-  
+
     localStorage.setItem("cart", JSON.stringify(updatedData));
   };
-  
+
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -56,7 +55,7 @@ export default function Home() {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
-        
+
 
 
   return (
@@ -76,7 +75,7 @@ export default function Home() {
               </button>
             </a>
             <button className="bg-white text-gold px-6 py-3 rounded-lg shadow-md hover:bg-gray-200 transition"
-            onClick={() => scrollToSection("products")}
+              onClick={() => scrollToSection("products")}
             >
               Explore
             </button>
@@ -87,7 +86,7 @@ export default function Home() {
 
       <section className="container mx-auto py-16 px-6 bg-black ">
         <h2 className="text-3xl font-bold text-center mb-10 text-gold">Featured Categories</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 "id="products">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 " id="products">
           {categories.map((category) => (
             <div
               key={category.id}
@@ -96,12 +95,11 @@ export default function Home() {
               <div className="relative text-center ">
                 <a href={category.link}>
 
-                <img
-                  src={`/${category.image}.jpeg`}
-                  alt={category.image}
+                  <Image src={`/${category.image}`} alt={`${category.name}`} width={"1000"} height={"1000"}
+
                   className="w-full h-48 object-cover hover:scale-110 transition transform"
                   />
-                  </a>
+                </a>
               </div>
             </div>
           ))}
@@ -121,11 +119,10 @@ export default function Home() {
               >
                 <div className="image w-full h-48 overflow-hidden">
 
-                  <img
-                    src={`${products.image}`}
-                    alt={`${products.name}`}
+                <Image src={`${products.image}`} alt={`${products.name}`} width={"1000"} height={"1000"}
+
                     className="w-full h-48 object-cover hover:scale-110 transition duration-300 transform overflow-hidden cursor-pointer"
-                  />
+/>
                 </div>
                 <div className="p-4 text-center">
                   <h3 className="text-lg font-bold text-gray-800">{products.name}</h3>

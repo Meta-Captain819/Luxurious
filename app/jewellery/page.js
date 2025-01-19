@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import jewellery from "../../data/jewellery.json";
+import Image from "next/image";
 
 
 
@@ -34,11 +35,10 @@ const ProductPage = () => {
           key={product.id}
           className="group relative bg-gray-200 shadow-sm shadow-gold rounded-lg overflow-hidden transform transition duration-500 hover:scale-105"
         >
-          <img
-            src={`${product.image}`}
-            alt={`Product ${product.name}`}
-            className="w-full h-60 object-cover"
-          />
+            <Image src={`${product.image}`} alt={`${product.name}`} width={"1000"} height={"1000"}
+           
+                             className="w-full h-64 object-cover"
+                           />
 
           <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-center py-2">
             <h3 className="text-sm font-bold text-gold">{product.name}</h3>

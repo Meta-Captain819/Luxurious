@@ -107,10 +107,10 @@ useEffect(() => {
       {isOpen && (
         <div className="bg-white md:hidden shadow-md">
           <nav className="flex flex-col items-center space-y-4 py-4">
-            <a href="#" className="text-gray-700 hover:text-gold transition">Home</a>
-            <a href="#" className="text-gray-700 hover:text-gold transition">Shop</a>
-            <a href="#" className="text-gray-700 hover:text-gold transition">About</a>
-            <a href="#" className="text-gray-700 hover:text-gold transition">Contact</a>
+            <a href="/" className="text-gray-700 hover:text-gold transition">Home</a>
+            <a href="/shop" className="text-gray-700 hover:text-gold transition">Shop</a>
+            <a href="/about" className="text-gray-700 hover:text-gold transition">About</a>
+            <a href="/contact" className="text-gray-700 hover:text-gold transition">Contact</a>
           </nav>
         </div>
       )}
