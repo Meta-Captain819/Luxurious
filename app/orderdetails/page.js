@@ -95,7 +95,7 @@ export default function OrderHistoryPage() {
     }
   }, [user]);
 
-  if (loading) {
+  if (loading || !orders) {
     return (
       <p className="min-h-screen flex justify-center items-center">
         {typeof window !== "undefined" && (
