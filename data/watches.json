@@ -1,0 +1,86 @@
+[
+  {
+    "id": "c515513f-3084-4d19-9b54-974063e5765f",
+    "name": "Classic Michael Kors",
+    "price": 10000,
+    "image": "/product-a.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "df9e14d2-00be-44ca-b6f6-296cd524dd49",
+    "name": "The Romanson",
+    "price": 15000,
+    "image": "/product-b.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "09e7a9f3-b6d7-44ff-b79c-681e12d2c365",
+    "name": "Luxurious Gold",
+    "price": 30000,
+    "image": "/product-3.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "6718897a-d292-42b2-8c3b-7b8b1d319e18",
+    "name": "Dark Time",
+    "price": 20000,
+    "image": "/product-c.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "c1daf521-867f-407e-acc4-0e8f48d1af44",
+    "name": "The Sapphire",
+    "price": 35000,
+    "image": "/product-d.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "2c4960d2-0838-4da2-acd6-6bdb0235c500",
+    "name": "The Diamond Era",
+    "price": 8000,
+    "image": "/watch1.jpeg",
+    "quantity": 1
+  },
+  {
+    "id": "b80538a0-d922-4b00-a2bc-16d80baf4178",
+    "name": "Classic Rolex",
+    "price": 17000,
+    "image": "/product-e.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "b1e5d625-8e5d-42cf-b68e-7a6821430d6f",
+    "name": "Gold Rolex",
+    "price": 28000,
+    "image": "/product-f.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "683d694e-f666-4f47-879b-ef9af88044ed",
+    "name": "Precise Bretling",
+    "price": 19000,
+    "image": "/product-g.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "ed1c0673-e009-48f4-b4e4-79562b644cb1",
+    "name": "The Lone",
+    "price": 23000,
+    "image": "/product-1.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "dd011021-3c0b-4fad-9318-0ae709252251",
+    "name": "Fivre-Leuta",
+    "price": 21000,
+    "image": "/product-h.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "98502b54-c675-4be3-85a4-8ab1fa5b922a",
+    "name": "The Mechanical Wrist",
+    "price": 27000,
+    "image": "/product-i.jpg",
+    "quantity": 1
+  }
+]

@@ -1,101 +1,155 @@
+"use client"
 import Image from "next/image";
+import { useState,useEffect } from "react";
+import { useSession } from "next-auth/react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const {data: session,status}= useSession()
+  
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+
+  const [product, setproduct] = useState([
+    { id: 1, name: "The Lone", price:23000, image: "/product-1.jpg", quantity:1 },
+    { id: 2, name: "The Urban Professional", price: 8500, image: "/product-2.jpg", quantity:1 },
+    { id: 3, name: "Luxurious Gold", price:30000, image: "/product-3.jpg", quantity:1 },
+    { id: 4, name: "Sapphire Ring", price: 250000, image: "https://images.unsplash.com/photo-1561812350-932aed735105?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fGpld2VsbGVyeXxlbnwwfHwwfHx8MA%3D%3D", quantity:1 },
+  ]);
+  const [categories, setcategories] = useState([
+    { id: 1, image: "jewelry", link:"/jewellery" },
+    { id: 2, image: "Watches", link:"/watches" },
+    { id: 3, image: "Clothing", link:"/clothing" },
+  ]);
+
+  const addToCart = (product) => {
+    const existingData = JSON.parse(localStorage.getItem("cart")) || [];
+  
+    const productIndex = existingData.findIndex((item) => item.id === product.id);
+  
+    let updatedData;
+  
+    if (productIndex !== -1) {
+      updatedData = existingData.map((item, index) =>
+        index === productIndex
+          ? {
+              ...item,
+              quantity: item.quantity + 1, 
+            }
+          : item
+      );
+    } else {
+      updatedData = [
+        ...existingData,
+        {
+          ...product,
+          quantity: 1, 
+        },
+      ];
+    }
+  
+    localStorage.setItem("cart", JSON.stringify(updatedData));
+  };
+  
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+        
+
+
+  return (
+    <main className="bg-gray-100">
+      <section className="relative bg-[url('/luxury.jpeg')] bg-cover bg-center h-screen flex items-center justify-center">
+        <div className="text-center text-white px-6">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            Discover <span className="text-gold">Luxury</span>
+          </h1>
+          <p className="text-lg md:text-xl mb-6">
+            The finest collection for the discerning customer.
+          </p>
+          <div className="space-x-4">
+            <a href="/shop">
+              <button className="bg-gold text-white px-6 py-3 rounded-lg shadow-md hover:bg-yellow-600 transition">
+                Shop Now
+              </button>
+            </a>
+            <button className="bg-white text-gold px-6 py-3 rounded-lg shadow-md hover:bg-gray-200 transition"
+            onClick={() => scrollToSection("products")}
+            >
+              Explore
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="absolute bg-black opacity-10 bg-cover bg-center h-screen"></div>
+      </section>
+
+      <section className="container mx-auto py-16 px-6 bg-black ">
+        <h2 className="text-3xl font-bold text-center mb-10 text-gold">Featured Categories</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 "id="products">
+          {categories.map((category) => (
+            <div
+              key={category.id}
+              className="bg-white shadow-sm shadow-gold rounded-lg overflow-hidden  transition duration-300 transform cursor-pointer"
+            >
+              <div className="relative text-center ">
+                <a href={category.link}>
+
+                <img
+                  src={`/${category.image}.jpeg`}
+                  alt={category.image}
+                  className="w-full h-48 object-cover hover:scale-110 transition transform"
+                  />
+                  </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="line bg-white pt-[1px]"></div>
+
+      <section className="bg-black py-16">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-center mb-10 text-gold">Featured Products</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {product.map((products) => (
+              <div
+                key={products.id}
+                className="bg-gray-200 shadow-sm shadow-gold rounded-lg overflow-hidden "
+              >
+                <div className="image w-full h-48 overflow-hidden">
+
+                  <img
+                    src={`${products.image}`}
+                    alt={`${products.name}`}
+                    className="w-full h-48 object-cover hover:scale-110 transition duration-300 transform overflow-hidden cursor-pointer"
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <h3 className="text-lg font-bold text-gray-800">{products.name}</h3>
+                  <p className="text-gray-600">${products.price}</p>
+                  <button
+                    onClick={() => { addToCart(products) }}
+                    onKeyPress={(e) => { if (e.key === "Enter") addToCart(products); }}
+                    role="button"
+                    className="bg-gold text-white mt-4 px-4 py-2 rounded shadow-md hover:bg-yellow-600 transition cursor-pointer"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="line bg-yellow-600 pt-[1px]"></div>
+
+
+
+
+    </main>
   );
 }

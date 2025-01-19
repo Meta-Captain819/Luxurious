@@ -1,0 +1,86 @@
+[
+  {
+    "id": "7f8c6777-683a-4b20-88b1-c710fbf307eb",
+    "name": "The Classic Elegance",
+    "price": 7000,
+    "image": "https://images.unsplash.com/photo-1598808503746-f34c53b9323e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8",
+    "quantity": 1
+  },
+  {
+    "id": "840e33e4-0652-4d78-9546-ca3ac99d95c8",
+    "name": "The Gentleman Charm",
+    "price": 9500,
+    "image": "https://images.unsplash.com/photo-1633655442168-c6ef0ed2f984?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDkzfHx8ZW58MHx8fHx8",
+    "quantity": 1
+  },
+  {
+    "id": "056d563e-4384-424a-938c-0af65e5d0c76",
+    "name": "The Timeless Tweed",
+    "price": 7800,
+    "image": "https://images.unsplash.com/photo-1616042256017-5ae731cf47b1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1Mnx8fGVufDB8fHx8fA%3D%3D",
+    "quantity": 1
+  },
+  {
+    "id": "ef77e3c5-5f2c-4ef2-a5af-92bb25867bb7",
+    "name": "The Modern Sophisticate",
+    "price": 13000,
+    "image": "https://images.unsplash.com/photo-1646855672493-b6925d356c9e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDM4fHx8ZW58MHx8fHx8",
+    "quantity": 1
+  },
+  {
+    "id": "d619a802-7766-44f6-9edb-9aa8095bc5b9",
+    "name": "The Urban Professional",
+    "price": 8500,
+    "image": "/product-2.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "225aa44a-8a7c-4843-bfac-65768284532b",
+    "name": "The Heritage Classic",
+    "price": 7800,
+    "image": "/clothing-a.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "cae96891-c99e-40e4-b648-8814f81e7434",
+    "name": "The Checkered Classic",
+    "price": 6300,
+    "image": "/clothing-e.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "20932bce-ca56-48b8-8087-f49acc4e54d5",
+    "name": "The Dapper Heritage",
+    "price": 8900,
+    "image": "/clothing-f.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "1f884449-9d88-4299-a4b1-127f30947c53",
+    "name": "The Blue Refined",
+    "price": 9800,
+    "image": "/clothing-g.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "8bd11028-5692-4043-9af8-7f1818848d96",
+    "name": "The Evening Sophisticate",
+    "price": 7400,
+    "image": "/clothing-c.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "87e7539d-2859-45ac-aa14-fc70bb681e9f",
+    "name": "The Autumn Elegance",
+    "price": 10500,
+    "image": "/clothing-z.jpg",
+    "quantity": 1
+  },
+  {
+    "id": "723f0631-bbce-4629-99bf-ee297f55119d",
+    "name": "The Luxe Gentleman",
+    "price": 12000,
+    "image": "/clothing-i.jpg",
+    "quantity": 1
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "2b187a8f-bc93-4357-8b9f-d37f9228871e",
+    "name": "Diamond Ring",
+    "price": 100000,
+    "image": "https://images.unsplash.com/photo-1514612497953-05d1e5e171fa?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGpld2VsbGVyeXxlbnwwfHwwfHx8MA%3D%3D",
+    "quantity": 1
+  },
+  {
+    "id": "00f2630f-7d1b-473b-8dfd-8665f354d020",
+    "name": "Diamond Earing",
+    "price": 250000,
+    "image": "https://plus.unsplash.com/premium_photo-1681276169450-4504a2442173?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGpld2VsbGVyeXxlbnwwfHwwfHx8MA%3D%3D",
+    "quantity": 1
+  },
+  {
+    "id": "b7fbbbfb-d888-4be8-8b6f-5531a6942914",
+    "name": "Emerald Necklace",
+    "price": 320000,
+    "image": "https://images.unsplash.com/photo-1721103418939-5112f0ccfac8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fG5lY2tsYWNlfGVufDB8fDB8fHww",
+    "quantity": 1
+  },
+  {
+    "id": "df0e4f21-b17d-478f-8486-316ac2423f05",
+    "name": "Diamond Necklace",
+    "price": 300000,
+    "image": "/jewelry.jpeg",
+    "quantity": 1
+  },
+  {
+    "id": "1bb3bc68-d90a-49d1-9505-59aea9bd7534",
+    "name": "The Ruby Bracelet",
+    "price": 400000,
+    "image": "https://images.unsplash.com/photo-1617191880362-aac615de3c26?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fGdvbGQlMjBicmFjZWxldHxlbnwwfHwwfHx8MA%3D%3D",
+    "quantity": 1
+  },
+  {
+    "id": "5ea55ef6-f6c3-4122-8ec1-f47c53966079",
+    "name": "Sapphire Ring",
+    "price": 250000,
+    "image": "https://images.unsplash.com/photo-1561812350-932aed735105?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTV8fGpld2VsbGVyeXxlbnwwfHwwfHx8MA%3D%3D",
+    "quantity": 1
+  },
+  {
+    "id": "08cc1723-9ccd-47fe-8041-a8e9993c5a1a",
+    "name": "The Trio of Luxury",
+    "price": 150000,
+    "image": "https://images.unsplash.com/photo-1689367436442-76c859315008?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fGdvbGQlMjBicmFjZWxldHxlbnwwfHwwfHx8MA%3D%3D",
+    "quantity": 1
+  },
+  {
+    "id": "e3a51845-bde6-4ceb-b5e7-8295b708ed74",
+    "name": "Diamond of Sapphire",
+    "price": 140000,
+    "image": "/jewelry1.jpeg",
+    "quantity": 1
+  },
+  {
+    "id": "41f697b4-bd60-4816-9ffd-a3250a4d0726",
+    "name": "The Luxurious Bracelet",
+    "price": 130000,
+    "image": "https://images.unsplash.com/photo-1689367436414-7acc3fdc3e2a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdvbGQlMjBicmFjZWxldHxlbnwwfHwwfHx8MA%3D%3D",
+    "quantity": 1
+  },
+  {
+    "id": "47e0f95a-5f86-4db6-8309-2324502ab8ac",
+    "name": "Trio of Diamond",
+    "price": 260000,
+    "image": "https://images.unsplash.com/photo-1543294001-f7cd5d7fb516?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njd8fGpld2VsbGVyeXxlbnwwfHwwfHx8MA%3D%3D",
+    "quantity": 1
+  },
+  {
+    "id": "b9ec4baf-79de-4049-91e9-2243038a8afa",
+    "name": "The Rare Specie",
+    "price": 230000,
+    "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTMyfHxnb2xkJTIwYnJhY2VsZXR8ZW58MHx8MHx8fDA%3D",
+    "quantity": 1
+  },
+  {
+    "id": "fb5560f3-d4a4-4645-8ab1-00f7e9a9fc86",
+    "name": "Luxury of Heaven",
+    "price": 370000,
+    "image": "https://images.unsplash.com/photo-1679156271456-d6068c543ee7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTI2fHxnb2xkJTIwYnJhY2VsZXR8ZW58MHx8MHx8fDA%3D",
+    "quantity": 1
+  }
+]
