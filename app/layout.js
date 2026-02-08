@@ -74,6 +74,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         </Sessionwrapper>
+        <script src="http://localhost:3000/widget/i5saI64-Lq52neX1S-k0-lcHQmzu45XR7jLEIsNtPco/js" async></script>
       </body>
     </html>
   );
