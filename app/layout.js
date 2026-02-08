@@ -62,12 +62,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="ai-assistant-verification" content="FgeqyAn4HzJuEVRTFleCH92wvU0B3Qgib18nhpjx2Lk" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
-      <head>
-        <meta name="ai-assistant-verification" content="IKohk_kIWjLrJ48FZgOxH7IURKuUXDevi_yNWWkJqEY" />
-      </head>
         <Sessionwrapper>
 
         <Navbar />
