@@ -65,6 +65,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
+      <head>
+        <meta name="ai-assistant-verification" content="IKohk_kIWjLrJ48FZgOxH7IURKuUXDevi_yNWWkJqEY" />
+      </head>
         <Sessionwrapper>
 
         <Navbar />
