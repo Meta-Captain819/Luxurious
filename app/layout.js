@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="ai-assistant-verification" content="vhcdLV2JLQ8j386GQdmofYdcGVGhAGQ18SGyaR10POg" />
+        <meta name="ai-assistant-verification" content="DkCUNSFaA_bqQj1c5kyV_UQ3aKnFRX3axugLtzw8ws4" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
