@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="ai-assistant-verification" content="FgeqyAn4HzJuEVRTFleCH92wvU0B3Qgib18nhpjx2Lk" />
+        <meta name="ai-assistant-verification" content="vhcdLV2JLQ8j386GQdmofYdcGVGhAGQ18SGyaR10POg" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
@@ -74,7 +74,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
         </Sessionwrapper>
-        <script src="http://localhost:3000/widget/i5saI64-Lq52neX1S-k0-lcHQmzu45XR7jLEIsNtPco/js" async></script>
+        
       </body>
     </html>
   );
